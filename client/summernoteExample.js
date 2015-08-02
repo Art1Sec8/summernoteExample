@@ -52,6 +52,11 @@ Template.inputHtml.onRendered(function() {
 Template.outputHtml.helpers({
   outputHtml: function () {
     var post = Posts.findOne({pageId: 'page1'});
-    return post.outputHtml;
+    if (typeof post === 'undefined' || post === 'null' ||
+    typeof post.outputHtml === 'undefined' || post.outputHtml === 'null') {
+      return null;
+    } else {
+      return post.outputHtml;
+    }
   }
 });
