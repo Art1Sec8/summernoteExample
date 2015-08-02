@@ -1,0 +1,26 @@
+<head>
+  <title>summernoteExample</title>
+</head>
+
+<body>
+    {{> userPage}}
+</body>
+
+<template name="userPage">
+    {{#if  Template.subscriptionsReady}}
+      {{> inputHtml}}
+      {{> outputHtml}}
+    {{else}}
+      Loading...
+    {{/if}}
+</template>
+
+<template name="inputHtml">
+    <H2>This is inputHtml</H2>
+      <div id="summerInput"></div>
+</template>
+
+<template name="outputHtml">
+  <H2>This is outputHtml</H2>
+  {{{outputHtml}}}
+</template>
